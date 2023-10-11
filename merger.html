@@ -40,6 +40,8 @@
         <button onclick="remove()">Remove</button>
         <p>Press the button to add elements in the front</p>
         <button onclick="addFront()">Add front</button>
+        <p>Press the button to swapElements</p>
+        <button onclick="swapElements()">Swap</button>
         
     </body>
     <script>
@@ -71,6 +73,24 @@
             flex = document.getElementById("target");
             firstChild = flex.firstChild;
             flex.insertBefore(out, firstChild);
+        }
+        function swapElements() {
+            let mergerItems = document.getElementsByClassName("merger");
+            let length = mergerItems.length;
+
+            if (length >= 2) {
+                let index1 = Math.floor(Math.random() * length);
+                let index2 = Math.floor(Math.random() * length);
+
+                // Ensure distinct indices
+                while (index2 === index1) {
+                    index2 = Math.floor(Math.random() * length);
+                }
+
+                let temp = mergerItems[index1].cloneNode(true);
+                mergerItems[index1].replaceWith(mergerItems[index2].cloneNode(true));
+                mergerItems[index2].replaceWith(temp);
+            }
         }
 
         
