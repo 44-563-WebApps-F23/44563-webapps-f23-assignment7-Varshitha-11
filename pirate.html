@@ -1,174 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title>Treasure</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
+    <title>One Piece</title>
     <style>
+        h2 {
+            color: #ea0909;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: left;
+        }
 
-        h2 {     
-            background-color: #f75403;
-            color: rgb(13, 156, 239);
-            padding: 10px;
-            margin: 0;
-        }
-    
-        .treasure {
-            margin-top: 20px;
-        }
-    
-        #locations,
-        #penalty {
-            margin: 10px;
-            font-weight: bold;
-            background-color: hsl(67, 94%, 51%);
-            padding: 10px;
-           
-        }
-    
-        #help {
-            margin: 10px;
-            background-color: hsl(320, 81%, 29%);
-            padding: 10px;
-           
-        }
-    
         p {
-            margin: 0;
+            color: rgb(206, 136, 7);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+
         }
-    
-        /* Button styling */
-        button {
-            background-color: #7d806c;
-            color: rgb(37, 241, 10);
-            padding: 5px 10px;
-            border: none;
-            cursor: pointer;
+
+        div {
+            color: greenyellow;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-    
-        button:hover {
-            background-color: #d207fb;
+
+        #locations,
+        #penalty,
+        #help {
+            color: rgb(185, 73, 95);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
         }
     </style>
 </head>
+
 <body>
     <h2>Find the treasure by Varshitha Gunnala</h2>
-    <div class="treasure">
-        <p>Click on the locations to search for treasure, beware the traps</p>
-    </div>
-    <div id="locations">
-        <p>Number of locations checked is zero</p>
-    </div>
-    <div id="penalty">
-        <p>Penalty is zero</p>
+
+    <p>Click on the locations to search for treasure, beware the traps</p>
+    <p id="locations">Number of locations checked is zero.</p>
+    <p id="penalty">Penalty is zero.</p>
+    <p onclick="help()">Click for help.</p>
+    <p id="help">Help report</p>
+    <button onclick="resetGame()" class="mb-3">New Game</button>
+    <div class="container-fluid">
+        <h2>Operational Game</h2>
+        <div class="row">
+            <div class="col-sm">
+                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc0" onclick="check(0)">
+                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc1" onclick="check(1)">
+                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc2" onclick="check(2)">
+                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc3" onclick="check(3)">
+                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc4" onclick="check(4)">
+            </div>
+            <br>
+            <div class="col-sm">
+                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc5" onclick="check(5)">
+                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc6" onclick="check(6)">
+                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc7" onclick="check(7)">
+                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc8" onclick="check(8)">
+                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc9" onclick="check(9)">
+            </div>
+            <br>
+            <div class="col-sm">
+                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc10" onclick="check(10)">
+                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc11" onclick="check(11)">
+                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc12" onclick="check(12)">
+                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc13" onclick="check(13)">
+                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc14" onclick="check(14)">
+            </div>
+            <br>
+            <div class="col-sm">
+                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc15" onclick="check(15)">
+                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc16" onclick="check(16)">
+                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc17" onclick="check(17)">
+                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc18" onclick="check(18)">
+                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc19" onclick="check(19)">
+            </div>
+            <br>
+            <div class="col-sm">
+                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc20" onclick="check(20)">
+                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc21" onclick="check(21)">
+                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc22" onclick="check(22)">
+                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc23" onclick="check(23)">
+                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc24" onclick="check(24)">
+            </div>
+        </div>
     </div>
     <div>
-        <p class="btn btn-primary">Click for help.</p>
+        <button onclick="bonusGame()">Bonus Game</button>
     </div>
-    <div id="help">
-        <p id="help" style="font-size: 16px; font-weight: bold;">Help report</p>
-    </div>
-    
-        
-    <body>
-        
-        <div class="container d-flex justify-content-center">
-            <div class="row">
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400"/>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400"/>
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid"  style="height: 400;" width="400"/>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400"/>
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400"/>
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-            </div>
-            <div class="row ">
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-            </div>
-            <div class="row ">
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400"/>
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400" />
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid"  style="height: 400;" width="400"/>
-                </div>
-                <div class="square-image">
-                    <img src="Treasure Location.jpg" alt="Treasure city " class="img-fluid" style="height: 400;" width="400"/>
-                </div>
-            </div>
-            
-        </div>
-    
-    </body>
-    
-    </html>
+    <script>
+        var ids = [ "loc0" ,"loc1" ,"loc2" ,"loc3" ,"loc4" ,
+                    "loc5" ,"loc6" ,"loc7" ,"loc8" ,"loc9" , 
+                    "loc10","loc11","loc12","loc13","loc14", 
+                    "loc15","loc16","loc17","loc18","loc19", 
+                    "loc20","loc21","loc22","loc23","loc24"];
+        var checkCount = 0;
+        var penalty = 0;
+        var lastCheck = 0;
+        var treasureLocation = 5;
+        var trapLocation = 18;
+        var gameOver = false;
+
+        function check(position) {
+
+            if (gameOver) {
+                return;
+            }
+            var id = ids[position];
+            var img = document.getElementById(id);
+
+            if (position == treasureLocation) {
+                img.src = "treasure.jpg";
+                gameOver = true;
+                penalty = penalty - 3;
+            }
+            else if (position == trapLocation) {
+                img.src = "Trap.jpg";
+                gameOver = true;
+                penalty = penalty + 4;
+            }
+            else {
+                img.src = "Pirate.jpg";
+            }
+
+            checkCount++;
+            penalty++;
+            var id_location = document.getElementById("locations");
+            id_penalty = document.getElementById("penalty");
+            id_location.innerHTML = `Number of locations checked is  ${checkCount}`;
+            id_penalty.innerHTML = `Penalty is ${penalty}`;
+            lastCheck = position;
+        }
+
+        function help() {
+
+            console.log("triggered");
+            let col = treasureLocation % 5;
+            let row = Math.floor((treasureLocation - 1) / 5);
+            let col1 = lastCheck % 5;
+            let row1 = Math.floor((lastCheck - 1) / 5);
+
+            let rowDiff = Math.abs(row - row1);
+            let colDiff = Math.abs(col - col1);
+
+            if ((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 && colDiff === 1)) {
+                console.log("can smell triggered");
+                document.getElementById("help").textContent = 'Can smell it';
+            }
+            else if (rowDiff + colDiff === 2) {
+                console.log("close matie");
+                document.getElementById("help").textContent = 'Close Matie';
+            }
+            else {
+                console.log("step faster");
+                document.getElementById("help").textContent = 'Step Faster';
+            }
+            penalty += 2;
+            id_penalty.innerHTML = `Penalty is ${penalty}`;
+        }
+
+        var trapLocation, treasureLocation;
+
+        function resetGame() {
+            checkCount = 0;
+            penalty = 0;
+            lastCheck = 0;
+            gameOver = false;
+
+            trapLocation = Math.floor(Math.random() * 25);
+            treasureLocation = Math.floor(Math.random() * 25);
+            while (trapLocation === treasureLocation) {
+                treasureLocation = Math.floor(Math.random() * 25);
+            }
+            document.getElementById("locations").textContent = "Locations Checked: 0";
+            document.getElementById("penalty").textContent = "Penalty: 0";
+            document.getElementById("help").textContent = "";
+        }
+        id_location.innerHTML = `Number of locations checked is  ${checkCount}`;
+        id_penalty.innerHTML = `Penalty is ${penalty}`;
+    </script>
+</body>
+</html>
