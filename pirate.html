@@ -1,181 +1,259 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Treasure</title>
-    <style>
-        h2 {
-            color: #ea0909;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            text-align: left;
-        }
+  <title>Treasure</title>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        p {
-            color: rgb(206, 136, 7);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-
-        }
-
-        div {
-            color: greenyellow;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        #locations,
-        #penalty,
-        #help {
-            color: rgb(185, 73, 95);
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-        }
-    </style>
 </head>
-
 <body>
-    <h2>Find the treasure by Varshitha Gunnala</h2>
-
-    <p>Click on the locations to search for treasure, beware the traps</p>
-    <p id="locations">Number of locations checked is zero.</p>
-    <p id="penalty">Penalty is zero.</p>
-    <p onclick="help()">Click for help.</p>
-    <p id="help">Help report</p>
-    <button onclick="resetGame()" class="mb-3">New Game</button>
-    <div class="container-fluid">
-        <h2>Operational Game</h2>
+    <h1 style="color: brown;" >Find the treasure by Varshitha</h1>
+        
+    <div style="color:rgb(30, 255, 0);font-size:20px;font-family:'Times New Roman', Times, serif;text-indent:20px;">
+        Click on the locations to search for treasure, beware the traps
+    </div>
+    
+    <div id="locations" style="color:rgb(255, 111, 0);font-size:16px;font-family:'Times New Roman', Times, serif;text-indent: 20px;">
+        Number of locations checked is zero.
+    </div>
+    
+    <div id="penalty" style="color:rgb(35, 202, 96);font-size:16px;font-family:'Times New Roman', Times, serif;text-indent: 20px;">
+        Penalty is zero.
+    </div>
+    
+    <div onclick="help()" style="color:rgb(107, 4, 84);font-size:16px;font-family:'Times New Roman', Times, serif;text-indent: 20px;">
+        Click for help.
+    </div>
+    
+    <div id="help" style="color:blue;font-size:16px;font-family:'Times New Roman', Times, serif;text-indent: 20px;">
+        Help report.
+    </div>
+    
+    
+    <div class="container">
         <div class="row">
             <div class="col-sm">
-                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc0" onclick="check(0)">
-                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc1" onclick="check(1)">
-                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc2" onclick="check(2)">
-                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc3" onclick="check(3)">
-                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc4" onclick="check(4)">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map" id="treasuremap1"
+                onclick="check(0)">
             </div>
-            <br>
             <div class="col-sm">
-                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc5" onclick="check(5)">
-                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc6" onclick="check(6)">
-                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc7" onclick="check(7)">
-                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc8" onclick="check(8)">
-                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc9" onclick="check(9)">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map" id="treasuremap2"
+                onclick="check(1)">
             </div>
-            <br>
             <div class="col-sm">
-                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc10" onclick="check(10)">
-                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc11" onclick="check(11)">
-                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc12" onclick="check(12)">
-                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc13" onclick="check(13)">
-                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc14" onclick="check(14)">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap3"
+                onclick="check(2)">
             </div>
-            <br>
             <div class="col-sm">
-                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc15" onclick="check(15)">
-                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc16" onclick="check(16)">
-                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc17" onclick="check(17)">
-                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc18" onclick="check(18)">
-                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc19" onclick="check(19)">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap4"
+                onclick="check(3)">
             </div>
-            <br>
             <div class="col-sm">
-                <img src="Treasure Location.jpg" alt="Position 1" width="100" height="100" id="loc20" onclick="check(20)">
-                <img src="Treasure Location.jpg" alt="Position 2" width="100" height="100" id="loc21" onclick="check(21)">
-                <img src="Treasure Location.jpg" alt="Position 3" width="100" height="100" id="loc22" onclick="check(22)">
-                <img src="Treasure Location.jpg" alt="Position 4" width="100" height="100" id="loc23" onclick="check(23)">
-                <img src="Treasure Location.jpg" alt="Position 5" width="100" height="100" id="loc24" onclick="check(24)">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap5"
+                onclick="check(4)">
+            </div>
+        </div>
+    
+        <div class="row">
+             <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap6"
+                onclick="check(5)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap7"
+                onclick="check(6)">    
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap8"
+                onclick="check(7)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap9"
+                onclick="check(8)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap10"
+                onclick="check(9)"> 
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap11"
+                onclick="check(10)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap12"
+                onclick="check(11)">       
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap13"
+                onclick="check(12)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap14"
+                onclick="check(13)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap15"
+                onclick="check(14)">          
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap16"
+                onclick="check(15)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap17"
+                onclick="check(16)">         
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap18"
+                onclick="check(17)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap19"
+                onclick="check(18)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap20"
+                onclick="check(19)">         
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap21"
+                onclick="check(20)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap22"
+                onclick="check(21)">           
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap23"
+                onclick="check(22)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap24"
+                onclick="check(23)">
+            </div>
+            <div class="col-sm">
+                <img src="Treasure location.jpg" width="100" height="100" alt="treasure map"  id="treasuremap25"
+                onclick="check(24)">         
             </div>
         </div>
     </div>
-    
+    <button type="button" class="btn btn-danger" id="newGameButton">New Game </button>
     <script>
-        var ids = [ "loc0" ,"loc1" ,"loc2" ,"loc3" ,"loc4" ,
-                    "loc5" ,"loc6" ,"loc7" ,"loc8" ,"loc9" , 
-                    "loc10","loc11","loc12","loc13","loc14", 
-                    "loc15","loc16","loc17","loc18","loc19", 
-                    "loc20","loc21","loc22","loc23","loc24"];
-        var checkCount = 0;
-        var penalty = 0;
-        var lastCheck = 0;
-        var treasureLocation = 5;
-        var trapLocation = 18;
-        var gameOver = false;
-
-        function check(position) {
-
-            if (gameOver) {
-                return;
+        let treasureIds=["treasuremap1","treasuremap2","treasuremap3","treasuremap4","treasuremap5",
+        "treasuremap6","treasuremap7","treasuremap8","treasuremap9","treasuremap10","treasuremap11",
+        "treasuremap12","treasuremap13","treasuremap14","treasuremap15","treasuremap16","treasuremap17",
+        "treasuremap18","treasuremap19","treasuremap20","treasuremap21","treasuremap22","treasuremap23",
+        "treasuremap24","treasuremap25"]
+        var checkCount =0
+        var penalty=0
+        var lastCheck=0
+        var treasureLocation=Math.floor(Math.random() * 25);;
+        var trapLocation=Math.floor(Math.random() * 25);;
+        var gameOver=false
+        
+        function check(position){
+            if(gameOver==true){
+    
             }
-            var id = ids[position];
-            var img = document.getElementById(id);
-
-            if (position == treasureLocation) {
-                img.src = "treasure.jpg";
-                gameOver = true;
-                penalty = penalty - 3;
+            else{
+    
+                if(position==treasureLocation){
+                    id=treasureIds[position];
+                    document.getElementById(id).src="Treasure.jpg";
+                    
+                    penalty=penalty-3;
+                    console.log("Treasure Position :"+ position);
+                    console.log("Penalty Points : "+ penalty);
+                    console.log("Game Over");
+                    gameOver=true;
+                }
+                else if(position==trapLocation){
+                    id=treasureIds[position];
+                    document.getElementById(id).src="Trap.jpg";
+                    penalty=penalty+4;
+                    gameOver=true;
+                    console.log("Trap Position :"+position);
+                    console.log("Penalty Points : "+penalty);
+                    console.log("Game Over");
+                }
+                else{
+                    id=treasureIds[position];
+                    document.getElementById(id).src="Pirate.jpg";
+                    checkCount=checkCount+1;
+                    penalty=penalty+1;              
+                    console.log("check count is:"+checkCount);
+                    console.log("Penalty Points :"+penalty);
+                }
+    
+                lastCheck=position;
+                console.log("last check position is "+ lastCheck);
+                document.getElementById("locations").innerHTML="Number of locations checked:"+ checkCount;
+                document.getElementById("penalty").innerHTML="Total Penalty points :"+ penalty;
             }
-            else if (position == trapLocation) {
-                img.src = "Trap.jpg";
-                gameOver = true;
-                penalty = penalty + 4;
-            }
-            else {
-                img.src = "Pirate.jpg";
-            }
-
-            checkCount++;
-            penalty++;
-            var id_location = document.getElementById("locations");
-            id_penalty = document.getElementById("penalty");
-            id_location.innerHTML = `Number of locations checked is  ${checkCount}`;
-            id_penalty.innerHTML = `Penalty is ${penalty}`;
-            lastCheck = position;
+            
         }
-
-        function help() {
-
-            console.log("triggered");
-            let col = treasureLocation % 5;
-            let row = Math.floor((treasureLocation - 1) / 5);
-            let col1 = lastCheck % 5;
-            let row1 = Math.floor((lastCheck - 1) / 5);
-
-            let rowDiff = Math.abs(row - row1);
-            let colDiff = Math.abs(col - col1);
-
-            if ((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 && colDiff === 1)) {
-                console.log("can smell triggered");
-                document.getElementById("help").textContent = 'Can smell it';
+        function help(){
+            let treasureLocationR=Math.floor(treasureLocation/5);
+            let treasureLocationC=treasureLocation%5;
+            let lastLocationR=Math.floor(lastCheck/5);
+            let lastLocationC=lastCheck%5;
+            let rowDiff=Math.abs(treasureLocationR-lastLocationR)
+            let colDiff=Math.abs(treasureLocationC-lastLocationC)
+            console.log(treasureLocationR,treasureLocationC,lastLocationR,lastLocationC)
+            penalty=penalty+2;
+            document.getElementById("penalty").innerHTML="Total Penalty Points :"+ penalty
+            if((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 && colDiff === 1))
+            {
+                document.getElementById("help").innerHTML="Can smell it"
             }
-            else if (rowDiff + colDiff === 2) {
-                console.log("close matie");
-                document.getElementById("help").textContent = 'Close Matie';
+            else if((rowDiff === 1 && colDiff === 1) || (rowDiff === 0 && colDiff === 2) || (rowDiff === 2 && colDiff === 0))
+            {
+                document.getElementById("help").innerHTML="Close Matie"
             }
-            else {
-                console.log("step faster");
-                document.getElementById("help").textContent = 'Step Faster';
-            }
-            penalty += 2;
-            id_penalty.innerHTML = `Penalty is ${penalty}`;
+            else{
+                document.getElementById("help").innerHTML="Step Faster"
+            }        
         }
-
-        var trapLocation, treasureLocation;
-
+        const newGameButton = document.getElementById("newGameButton");
+        newGameButton.addEventListener("click", resetGame);
         function resetGame() {
-            checkCount = 0;
-            penalty = 0;
-            lastCheck = 0;
-            gameOver = false;
-
-            trapLocation = Math.floor(Math.random() * 25);
-            treasureLocation = Math.floor(Math.random() * 25);
-            while (trapLocation === treasureLocation) {
-                treasureLocation = Math.floor(Math.random() * 25);
-            }
-            document.getElementById("locations").textContent = "Locations Checked: 0";
-            document.getElementById("penalty").textContent = "Penalty: 0";
-            document.getElementById("help").textContent = "";
+            if(gameOver == true)
+            {
+                checkCount=0;
+                penalty=0;
+                gameOver=false;
+    
+                treasureLocation = Math.floor(Math.random() * 25);      
+                trapLocation = Math.floor(Math.random() * 25);
+          
+                for (let i = 0; i < 25; i++) {
+                const id = treasureIds[i];
+                document.getElementById(id).src = "Treasure location.jpg";  
         }
-        id_locations.innerHTML = `Number of locations checked is  ${checkCount}`;
-        id_penalty.innerHTML = `Penalty is ${penalty}`;
+                document.getElementById("locations").innerHTML = "Number of locations checked: " + checkCount;
+                document.getElementById("penalty").innerHTML = "Total Penalty points: " + penalty;
+                document.getElementById("help").innerHTML = "Help report.";
+    
+                console.log("New Game started");
+                console.log("treasure location " + treasureLocation); 
+                console.log("trap location " + trapLocation);
+            }
+        }
     </script>
-</body>
-</html>
+    
+    </body>
+    </html>
